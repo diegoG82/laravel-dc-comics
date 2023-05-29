@@ -5,7 +5,7 @@
         <div class="container">
             <h2>TUTTI I COMICS</h2>
             <div class="my-2 text-end">
-                {{-- <a href="{{ route('comics.create') }}">Crea una nuovo fumetto</a> --}}
+                <a href="{{ route('comics.create') }}">Crea una nuovo fumetto</a>
             </div>
             <table class="table">
                 <thead>
