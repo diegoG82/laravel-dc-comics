@@ -3,9 +3,9 @@
 
     @section('content')
         <div class="container">
-            <h2>TUTTI I COMICS</h2>
+            <h2 class="text-center">COMICS LIST</h2>
             <div class="my-2 text-end">
-                <a href="{{ route('comics.create') }}">Crea una nuovo fumetto</a>
+                <a href="{{ route('comics.create') }}">CREATE NEW</a>
             </div>
             <table class="table">
                 <thead>

@@ -22,7 +22,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="type" class="form-label">Type</label>
+                <label for="type" class="form-label">Tipo</label>
                 <input type="text" class="form-control" id="type" name="type">
             </div>
             
