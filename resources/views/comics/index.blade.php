@@ -3,14 +3,14 @@
 
     @section('content')
         <div class="container">
-            <h2 class="text-center">COMICS LIST</h2>
+            <h2 class="text-center mt-4">COMICS LIST</h2>
             <div class="my-2 text-end">
-                <a href="{{ route('comics.create') }}">CREATE NEW</a>
+                <a class="btn btn-primary" href="{{ route('comics.create') }}">CREATE NEW</a>
             </div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">Thumb</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Descrizione</th>
                         <th scope="col">Prezzo</th>
@@ -20,22 +20,23 @@
                 <tbody>
                     @foreach ($comics as $comic)
                         <tr>
-                            <th scope="row">{{ $comic->id }}</th>
+                            {{-- <td scope="row">{{ $comic->id }}</td> --}}
+                            <td><img src="{{ $comic->thumb }}" alt="{{ $comic->title }}" class="img-thumbnail"></td>
                             <td>{{ $comic->title }}</td>
                             <td>{{ $comic->description }}</td>
                             <td>{{ $comic->series }}</td>
                             <td>
-                                <a class="btn btn-success d-inline-block" href="{{ route('comics.show', $comic->id) }}">
+                                <a class="btn btn-success mt-2" href="{{ route('comics.show', $comic->id) }}">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
-                                <a class="btn btn-warning d-inline-block" href="{{ route('comics.edit', $comic->id) }}">
+                                <a class="btn btn-warning mt-2" href="{{ route('comics.edit', $comic->id) }}">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 
                                 <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <button type= "submit" class="btn btn-danger" onclick="confirmDelete()">
+                                    <button type= "submit" class="btn btn-danger mt-2" onclick="return confirmDelete()">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </form>    
@@ -51,9 +52,15 @@
 
         <script>
             function confirmDelete() {
-                return confirm('Are you sure you want to delete this comic?');
+                let result = confirm('Are you sure you want to delete this comic?');
+                if (result) {
+                    return true; 
+                } else {
+                    return false; 
+                }
             }
         </script>
+        
 
     @endsection
 

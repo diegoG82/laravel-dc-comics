@@ -38,7 +38,8 @@
                 <input type="text" class="form-control" id="series" name="series">
             </div>
 
-            <button type="submit" class="btn btn-primary">Invia</button>
+            <a href="{{ route('comics.index') }}" class="btn btn-warning m-2  ">Turn Back</a>
+            <button type="submit" class="btn btn-primary m-2">Invia</button>
 
         </form>
     </div>

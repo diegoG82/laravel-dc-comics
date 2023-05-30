@@ -29,29 +29,48 @@
                 <input type="text" class="form-control" id="price" name="price" value="{{ $comic->price }}">
             </div>
 
+
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
-                <input type="text" class="form-control" id="type" name="type" value="{{ $comic->type }}">
+                <select class="form-select" id="type" name="type">
+                    <option value="Comic" {{ $comic->type === 'Comic' ? 'selected' : '' }}>Comic</option>
+                    <option value="Graphic Novel" {{ $comic->type === 'Graphic Novel' ? 'selected' : '' }}>Graphic Novel
+                    </option>
+                </select>
             </div>
+
 
 
             <div class="mb-3">
                 <label for="series" class="form-label">Serie</label>
                 <input type="text" class="form-control" id="series" name="series" value="{{ $comic->series }}">
-               
+
             </div>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary ">Invia</button>
+            <div class="d-flex">
+
+
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger m-2" onclick="confirmDelete()">
+                        Delete</i>
+                    </button>
+                </form>
+
+                <div>
+                    <button type="submit" class="btn btn-warning m-2 ">Update</button>
+                </div>
+
+                <a href="{{ route('comics.index') }}" class="btn btn-primary m-2  ">Turn Back</a>
+
+            
             </div>
 
-        
-         
 
-        </form>
+
+
+
+
     </div>
-
-   
-
-
 @endsection
