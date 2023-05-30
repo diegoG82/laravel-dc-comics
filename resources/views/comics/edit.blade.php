@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center">EDIT COMIC</h2>
+        <h2 class="text-center mt-4">EDIT COMIC </h2>
 
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @method('PUT')

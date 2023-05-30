@@ -3,9 +3,10 @@
 
     @section('content')
         <div class="container">
-            <h2 class="text-center mt-4">COMICS LIST</h2>
-            <div class="my-2 text-end">
-                <a class="btn btn-primary" href="{{ route('comics.create') }}">CREATE NEW</a>
+            <h2 class="text-center mt-4">DC COMICS LIST</h2>
+            <div class="my-2 mt-4 text-center    ">
+                <a href="{{ route('home') }}" class="btn btn-primary">Homepage</a>   
+                <a class="btn btn-success" href="{{ route('comics.create') }}">Create new</a>
             </div>
             <table class="table">
                 <thead>
