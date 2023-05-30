@@ -39,7 +39,7 @@
             </div>
 
             <a href="{{ route('comics.index') }}" class="btn btn-warning m-2  ">Turn Back</a>
-            <button type="submit" class="btn btn-primary m-2">Invia</button>
+            <button type="submit" class="btn btn-primary m-2">Create</button>
 
         </form>
     </div>

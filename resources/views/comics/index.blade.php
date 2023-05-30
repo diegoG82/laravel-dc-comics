@@ -11,10 +11,10 @@
                 <thead>
                     <tr>
                         <th scope="col">Thumb</th>
-                        <th scope="col">Titolo</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col">Prezzo</th>
-                        <th scope="col">Serie</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Series</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
