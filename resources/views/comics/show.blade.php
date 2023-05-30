@@ -14,5 +14,7 @@
         <p>
             {{ $comic->description }}
         </p>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary mt-4">TURN BACK</a>
     </div>
+    
 @endsection

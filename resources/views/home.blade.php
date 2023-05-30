@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Pagina home</h1>
-@endsection 
+    <div class="container text-center mt-4">
+        <h1 text>Pagina home</h1>
+        <a href="{{ route('comics.index') }}">GO TO COMICS</a>
+    </div>
+@endsection
