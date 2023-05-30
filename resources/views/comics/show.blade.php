@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Titolo del Fumetto {{ $comic->title }}</h2>
+        <h2>Titolo del Fumetto: {{ $comic->title }}</h2>
         <img class="w-20" src="{{ $comic->thumb }}" alt="">
         <ul class="list-group">
             
