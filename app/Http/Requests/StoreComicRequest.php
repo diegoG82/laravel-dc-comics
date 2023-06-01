@@ -51,7 +51,7 @@ class StoreComicRequest extends FormRequest
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'thumb' => 'nullable|string',
-            'price' => 'required|numeric',
+            'price' => 'required|string',
             'type' => 'required|in:Comic,Graphic Novel',
             'series' => 'required|string',
         ];
@@ -67,7 +67,7 @@ class StoreComicRequest extends FormRequest
             'description.string' => 'La descrizione deve essere una stringa.',
             'thumb.string' => 'La thumb deve essere una stringa.',
             'price.required' => 'Il prezzo è obbligatorio.',
-            'price.numeric' => 'Il prezzo deve essere un numero.',
+            'price.numeric' => 'Il prezzo deve essere una stringa.',
             'type.required' => 'Il tipo è obbligatorio.',
             'type.in' => 'Il tipo deve essere "Comic" o "Graphic Novel".',
             'series.required' => 'La serie è obbligatoria.',

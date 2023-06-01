@@ -17,7 +17,7 @@ class UpdateComicRequest extends FormRequest
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'thumb' => 'nullable|string|max:255',
-            'price' => 'required|numeric',
+            'price' => 'required|string',
             'type' => 'required|in:Comic,Graphic Novel',
             'series' => 'required|string|max:255',
         ];
@@ -34,7 +34,7 @@ class UpdateComicRequest extends FormRequest
             'thumb.string' => 'Il campo thumb deve essere una stringa.',
             'thumb.max' => 'Il campo thumb non può superare :max caratteri.',
             'price.required' => 'Il prezzo è obbligatorio.',
-            'price.numeric' => 'Il prezzo deve essere un valore numerico.',
+            'price.numeric' => 'Il prezzo deve essere una stringa.',
             'type.required' => 'Il tipo è obbligatorio.',
             'type.in' => 'Il tipo deve essere "Comic" o "Graphic Novel".',
             'series.required' => 'La serie è obbligatoria.',

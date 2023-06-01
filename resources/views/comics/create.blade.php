@@ -42,6 +42,7 @@
             <div class="mb-3">
                 <label for="type" class="form-label">Type</label>
                 <select class="form-select @error('type') is-invalid @enderror" id="type" name="type">
+                    <option value=""></option>
                     <option value="Comic" {{ old('type') === 'Comic' ? 'selected' : '' }}>Comic</option>
                     <option value="Graphic Novel" {{ old('type') === 'Graphic Novel' ? 'selected' : '' }}>Graphic Novel</option>
                 </select>
