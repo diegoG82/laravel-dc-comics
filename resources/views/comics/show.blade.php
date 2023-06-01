@@ -19,23 +19,37 @@
             <a class="btn btn-warning m-2" href="{{ route('comics.edit', $comic->id) }}">
                 Modify
             </a>
-            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+
+            {{-- Delete popup --}}
+            {{-- <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-danger m-2" onclick="return confirmDelete()">
                     Delete
                 </button>
+            </form> --}}
+
+
+            <form class="d-inline-block" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-danger btn-delete mt-2" data-comic-title='{{ $comic->title }}'>
+                    Delete
+                </button>
             </form>
+
+
             <a href="{{ route('comics.index') }}" class="btn btn-primary m-2  ">Turn Back</a>
 
         </div>
+        @include('partials.modal_delete')
 
     </div>
-
-    <script>
+    
+    {{-- Script for delete popup --}}
+    {{-- <script>
         function confirmDelete() {
             return confirm('Are you sure you want to delete this comic?');
         }
-    </script>
-
+    </script> --}}
 @endsection
