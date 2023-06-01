@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center mt-4">EDIT COMIC</h2>
 
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
@@ -58,8 +58,8 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-
-            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ route('comics.index') }}" class="btn btn-primary m-2  ">Turn Back</a>
+            <button type="submit" class="btn btn-warning">Update</button>
         </form>
     </div>
 @endsection

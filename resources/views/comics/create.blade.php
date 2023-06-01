@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-center mt-4">CREATE NEW COMIC</h2>
 
         <form action="{{ route('comics.store') }}" method="POST">
@@ -58,7 +58,8 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">Create</button>
+            <a href="{{ route('comics.index') }}" class="btn btn-primary m-2  ">Turn Back</a>
+            <button type="submit" class="btn btn-success">Create</button>
         </form>
     </div>
 @endsection
