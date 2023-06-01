@@ -34,13 +34,26 @@
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 
-                                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                                {{-- <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button type= "submit" class="btn btn-danger mt-2" onclick="return confirmDelete()">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
-                                </form>    
+                                </form>     --}}
+
+
+                                <form class="d-inline-block" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-delete"  data-comic-title='{{ $comic->title }}'>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+
+
+
+
 
 
                             </td>
@@ -49,9 +62,10 @@
 
                 </tbody>
             </table>
+            @include('partials.modal_delete')
         </div>
 
-        <script>
+        {{-- <script>
             function confirmDelete() {
                 let result = confirm('Are you sure you want to delete this comic?');
                 if (result) {
@@ -60,9 +74,9 @@
                     return false; 
                 }
             }
-        </script>
+        </script> --}}
         
 
     @endsection
 
-
+  

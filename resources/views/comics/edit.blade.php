@@ -30,14 +30,24 @@
             </div>
 
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="type" class="form-label">Type</label>
                 <select class="form-select" id="type" name="type">
                     <option value="Comic" {{ $comic->type === 'Comic' ? 'selected' : '' }}>Comic</option>
                     <option value="Graphic Novel" {{ $comic->type === 'Graphic Novel' ? 'selected' : '' }}>Graphic Novel
                     </option>
                 </select>
+            </div> --}}
+
+
+            <div class="mb-3">
+                <label for="type" class="form-label">Type</label>
+                <select class="form-select" id="type" name="type">
+                    <option  @selected($comic->type === 'Comic') value="Comic">Comic</option>
+                    <option  @selected($comic->type === 'Graphic Novel') value="Graphic Novel">Graphic Novel</option>
+                </select>
             </div>
+            
 
 
 
